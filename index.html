@@ -2,15 +2,19 @@
 <footer class="active">
   <html>
   <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     body {
-    background-image: url('D:\\D\\1.jpg'); /* 将 'path/to/your/image.jpg' 替换为您自己图片的路径 */
-    background-size: cover; /* 调整背景图片的大小以覆盖整个页面 */
-    background-repeat: no-repeat; /* 禁止背景图片重复显示 */
-    background-attachment: fixed; /* 使背景图片固定不随页面滚动而移动 */
+   body {
+    background-image: url('1.jpg'); /* 使用相对路径 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 }
 
   .container {
@@ -35,11 +39,11 @@
             margin: 20px 0;
         }
         .search input {
-            width: 115%;
+            width: 85%;
             height: 40px;
             border: 1px solid #cccccc;
             border-radius: 50px;
-            padding: 10px 100px;
+            padding: 10px 40px;
             font-size: 28px;
         }
 		
@@ -84,6 +88,27 @@
 .link:nth-last-child(1):nth-child(odd) {
     margin-left: 25%; /* 使最后一个奇数图标左对齐 */
 }
+
+/* 对于较小的屏幕，调整样式 */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%; /* 适应较小屏幕的宽度 */
+    padding: 10px; /* 减少边距 */
+  }
+  .logo {
+    font-size: 24px; /* 调整字体大小 */
+    margin-top: 30px; /* 调整顶部边距 */
+  }
+  .search input {
+    width: 100%; /* 充满整个容器 */
+    padding: 10px 20px; /* 减少内边距 */
+    font-size: 18px; /* 调整字体大小 */
+  }
+  .link {
+    width: 25%; /* 一行容纳四个图标 */
+  }
+}
+
     
 @media screen{
 .2 {
@@ -101,7 +126,7 @@
       <a href="mailto:zalp0007@gmail.com"> 我的邮箱</a>
   <div class="search">
     <form action="https://www.bing.com/search" method="get" target="_blank">
-      <input type="text" name="q" placeholder="">
+      <input type="text" name="q" placeholder="welcome">
       <input type="hidden" name="ensearch" value="1">
       <input type="hidden" name="FORM" value="BEHPTB">
       <input type="hidden" name="setmkt" value="zh-CN">
