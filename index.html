@@ -5,164 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-<style>
-    body {
-        background-image: url('1.jpg');
-        /* 使用相对路径 */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+    <style>
+        body {
+            background-image: url('1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
 
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .logo {
-        text-align: center;
-        margin-top: 70px;
-        font-size: 36px;
-        font-weight: bold;
-        color: #333333;
-    }
-
-    .search {
-        margin: 20px 0;
-    }
-
-    .search input {
-        width: 85%;
-        height: 40px;
-        border: 1px solid #cccccc;
-        border-radius: 50px;
-        padding: 10px 40px;
-        font-size: 28px;
-    }
-
-    .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-.link {
-    width: 25%;
-    height: 100px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #f9f9f9;
-    border: none;
-    padding: 10px;
-    position: relative;
-    box-shadow: none; /* 修改此处 */
-}
-
-
-
-    .link a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        color: #333333;
-    }
-
-    .link img {
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        margin-bottom: 10px;
-    }
-
-    .link span {
-        font-size: 16px;
-        color: #333333;
-    }
-
-    .link button.delete-button {
-        display: none;
-        background-color: #f44336;
-        color: white;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /* 处理奇数个图标的左对齐 */
-    .link:nth-last-child(1):nth-child(odd) {
-        margin-left: 25%;
-    }
-
-    /* 对于较小的屏幕，调整样式 */
-    @media (max-width: 768px) {
         .container {
-            max-width: 100%;
-            padding: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .logo {
-            font-size: 24px;
-            margin-top: 30px;
+            text-align: center;
+            margin-top: 70px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .search {
+            margin: 20px 0;
         }
 
         .search input {
             width: 100%;
+            height: 40px;
+            border: 1px solid #cccccc;
+            border-radius: 50px;
             padding: 10px 20px;
             font-size: 18px;
         }
 
-        .link {
-            width: 50%;
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
-    }
 
-    .edit-button {
-        margin-bottom: 20px;
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-</style>
+        .link {
+            width: 23%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .link a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333333;
+        }
+
+        .link img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .link span {
+            font-size: 16px;
+            color: #333333;
+        }
+
+        .link button.delete-button {
+            display: none;
+            background-color: #f44336;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .link:hover .delete-button {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .logo {
+                font-size: 24px;
+                margin-top: 30px;
+            }
+
+            .search input {
+                width: 100%;
+                padding: 10px 20px;
+                font-size: 18px;
+            }
+
+            .link {
+                width: 48%;
+            }
+        }
+
+        .edit-button {
+            margin-bottom: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
 
 </head>
 
 <body>
     <div class="container">
+        <div class="logo">MRS.DU</div>
         <div class="links" id="links">
             <div class="link">
                 <a href="https://www.bing.com/" target="_blank">
-                    <img src="https://www.bing.com/favicon.ico" class="rounded-circle">
-                    <span>bing</span>
+                    <img src="https://www.bing.com/favicon.ico" alt="bing icon">
+                    <span>Bing</span>
                 </a>
-                <button class="delete-button" style="display: none" onclick="deleteLink(0)">删除</button>
+                <button class="delete-button" onclick="deleteLink(0)">Delete</button>
             </div>
             <div class="link">
                 <a href="https://www.bilibili.com/" target="_blank">
-                    <img src="https://www.bilibili.com/favicon.ico" class="rounded-circle">
+                    <img src="https://www.bilibili.com/favicon.ico" alt="bilibili icon">
                     <span>哔哩哔哩</span>
                 </a>
-                <button class="delete-button" style="display: none" onclick="deleteLink(1)">删除</button>
+                <button class="delete-button" onclick="deleteLink(1)">Delete</button>
             </div>
             <!-- Newly added links will be displayed here -->
         </div>
     </div>
-    <button onclick="addLink()">添加自定义链接</button>
-    <button onclick="toggleEditMode()" id="editButton">编辑</button>
+    <button onclick="addLink()">Add Custom Link</button>
+    <button onclick="toggleEditMode()" id="editButton">Edit</button>
 </body>
 
 <script>
@@ -179,12 +190,12 @@
             }
         }
         var editButton = document.getElementById('editButton');
-        editButton.textContent = editMode ? '取消编辑' : '编辑';
+        editButton.textContent = editMode ? 'Cancel Edit' : 'Edit';
     }
 
     function addLink() {
-        var userLink = prompt('请输入链接地址：');
-        var userTitle = prompt('请输入链接名称：');
+        var userLink = prompt('Enter the link address:');
+        var userTitle = prompt('Enter the link title:');
         if (userLink && userTitle) {
             var links = JSON.parse(localStorage.getItem('userLinks')) || [];
             links.push({
@@ -218,13 +229,13 @@
             newA.target = '_blank';
             var newImg = document.createElement('img');
             newImg.src = link.url + '/favicon.ico';
-            newImg.classList.add('rounded-circle');
+            newImg.alt = link.title + ' icon';
             var newSpan = document.createElement('span');
             newSpan.textContent = link.title;
             newA.appendChild(newImg);
             newA.appendChild(newSpan);
             var deleteButton = document.createElement('button');
-            deleteButton.textContent = '删除';
+            deleteButton.textContent = 'Delete';
             deleteButton.classList.add('delete-button');
             deleteButton.onclick = function () {
                 deleteLink(index);
